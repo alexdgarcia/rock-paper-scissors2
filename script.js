@@ -53,30 +53,3 @@ function playRound(playerSelection, computerSelection) {
   summaryMessage.textContent = (playerScore === 5) ? "You are the winner!" :
       (computerScore === 5) ? "You lost to a computer :(" : message;
 }
-
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-
-  for (let round = 0; round < 5; round++) {
-    let playerMove = prompt("Rock, Paper, or Scissors?!");
-    let outcome = playRound(playerMove, computerPlay());
-    console.log(outcome);
-
-    if (outcome.indexOf("You win!") === 0) {
-      playerScore++;
-    } else if (outcome.indexOf("You lose!") === 0) {
-      computerScore++;
-    }
-  }
-
-  if (playerScore > computerScore) {
-    console.log(`You win! ${playerScore}-${computerScore}`);
-  } else if (playerScore < computerScore) {
-    console.log(`You lose! ${playerScore}-${computerScore}`);
-  } else {
-    console.log("Tie game!");
-  }
-}
-
-// game();
