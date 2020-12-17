@@ -5,66 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Rock, Paper, Scissors</title>
+
+    <link rel="stylesheet" href="styles.css"/>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ffaed3d8bd.js"
+        crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <script>
-      function computerPlay() {
-        let possibleChoices = ["Rock", "Paper", "Scissors"];
-        let randomIndex = Math.floor(Math.random() * possibleChoices.length);
-        let computerChoice = possibleChoices[randomIndex];
-        return computerChoice;
-      }
-
-      function playRound(playerSelection, computerSelection) {
-        // rock beats scissor
-        // paper beats rock
-        // scissor beats paper
-        let message = "";
-        playerSelection = playerSelection.toLowerCase();
-        playerSelection = playerSelection[0].toUpperCase()
-          + playerSelection.slice(1);
-
-        if ((playerSelection === "Rock" && computerSelection === "Scissors") ||
-          (playerSelection === "Paper" && computerSelection === "Rock") ||
-          (playerSelection === "Scissor" && computerSelection === "Paper")) {
-            message = `You win! ${playerSelection} beats ${computerSelection}`;
-        } else if (playerSelection === computerSelection) {
-          message =
-            `Tie game! ${playerSelection} and ${computerSelection} are equal`;
-        } else {
-          message = `You lose! ${computerSelection} beats ${playerSelection}`;
-        }
-
-        return message;
-      }
-
-      function game() {
-        let playerScore = 0;
-        let computerScore = 0;
-
-        for (let round = 0; round < 5; round++) {
-          let playerMove = prompt("Rock, Paper, or Scissors?!");
-          let outcome = playRound(playerMove, computerPlay());
-          console.log(outcome);
-
-          if (outcome.indexOf("You win!") === 0) {
-            playerScore++;
-          } else if (outcome.indexOf("You lose!") === 0) {
-            computerScore++;
-          }
-        }
-
-        if (playerScore > computerScore) {
-          console.log(`You win! ${playerScore}-${computerScore}`);
-        } else if (playerScore < computerScore) {
-          console.log(`You lose! ${playerScore}-${computerScore}`);
-        } else {
-          console.log("Tie game!");
-        }
-      }
-
-      game();
-    </script>
+    <div class="container">
+      <header class="gameHeader">
+        <h1 class="gameHeader-header">
+          Rock, Paper, Scissors
+        </h1>
+        <div class="gameHeader-boxScore">
+          <div class="gameHeader-playerScore">
+            Player Score:<span class="score">0</span>
+          </div>
+          <div class="gameHeader-computerScore">
+            Computer Score:<span class="score">0</span>
+          </div>
+        </div>
+        <div class="gameHeader-summary">
+          <span class="gameHeader-summaryMessage">
+            Choose your opening move
+          </span>
+        </div>
+      </header>
+      <main class="gameBoard">
+        <div class="gameBoard-userSelection">
+          <div class="gameBoard-rock" data-move="rock">
+            <i class="fas fa-hand-rock" data-move="rock"></i>
+          </div>
+          <div class="gameBoard-paper" data-move="paper">
+            <i class="fas fa-hand-paper" data-move="paper"></i>
+          </div>
+          <div class="gameBoard-scissors" data-move="scissors">
+            <i class="fas fa-hand-scissors" data-move="scissors"></i>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

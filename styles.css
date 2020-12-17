@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: monospace;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 50%;
+  margin: 10rem auto;
+}
+
+header {
+  border: .5rem solid white;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.gameHeader-boxScore {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+.gameHeader-playerScore,
+.gameHeader-computerScore {
+  border: .5rem solid white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.gameHeader-playerScore .score,
+.gameHeader-computerScore .score{
+  padding-left: 1rem;
+}
+
+.gameHeader-summary {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gameBoard-userSelection {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10rem auto;
+}
+
+.gameBoard-rock,
+.gameBoard-paper,
+.gameBoard-scissors {
+  font-size: 5rem;
+  border: .5rem solid white;
+  border-radius: 1rem;
+  padding: 5rem;
+}
+
+.gameBoard-rock:hover,
+.gameBoard-paper:hover,
+.gameBoard-scissors:hover {
+  border: .5rem solid hsl(230, 50%, 50%);
+  color:hsl(230, 50%, 50%);
+  transition: 0.7s;
+  transform: scale(1.3);
+}
